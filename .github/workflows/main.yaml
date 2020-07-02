@@ -30,7 +30,6 @@ jobs:
             python -m pip install --upgrade pip
             pip install pyinstaller
         - name: build with pyinstaller
-          if: matrix.os == 'ubuntu-latest'
           run: |
             pyi-makespec --paths=excalibur/executors/celery_executor.py arthur.py
             pyinstaller --onefile --add-data "excalibur/www/templates:excalibur/www/templates" --add-data "excalibur/www/static:excalibur/www/static" --add-data "excalibur/config_templates:excalibur/config_templates" arthur.py
