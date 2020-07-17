@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: 3.8
-          if: ${{ config.os.arch == 'ia32'}} 
+          if: ${{ matrix.config.os.arch == 'ia32'}} 
           architecture: x86 
       - name: Install Excalibur
         run: |
